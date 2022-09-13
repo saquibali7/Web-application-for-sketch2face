@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/CSS/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>pix2pix</title>
+</head>
+
+<body>
+    <div class="header">
+        <p>Web Application for converting sketch images to color images</p>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx auto mt-5 text-center">
+                <h3 class="mb-5">Insert the sketch image here : </h3>
+
+                <form method="post" action="/" enctype="multipart/form-data">
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <input class="form-control" type="file" name="file" autocomplete="off" required>
+                        </div>
+                        <div class="col-auto">
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                        </div>
+                    </div>
+            </div>
+            </form>
+            <div class="grid mt-5" style="display:flex; justify-content: space-around;">
+                <div class="g-col-4">
+                    {% if filename %}
+                    <h3 mb-5>sketch Image</h3>
+                    <img id="myImgId" src="static/uploads/temp.png " style="width : 650px;">
+                    {% endif %}
+                </div>
+
+                <div class="g-col-4">
+                    {% if filename %}
+                    <h3 mb-5>Predict Image</h3>
+                    <img class="image" src="static/uploads/result.png" style="width : 650px;">
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>
